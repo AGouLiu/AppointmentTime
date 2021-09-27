@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="reserved_r_text_color">#FFFFFF</color>
+    <color name="reserved_text_color">#54AAFE</color>
+    <color name="reserved_bg_color">#E5E5E5</color>
+    <color name="reserved_text_waring_color">#FF1C13</color>
+    <color name="reserved_bg_waring_color">#FFD5D6</color>
+
+</resources>

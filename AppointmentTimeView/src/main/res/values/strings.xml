@@ -1,0 +1,18 @@
+<resources>
+
+    <string-array name="week">
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+        <item>周日</item>
+    </string-array>
+
+    <string-array name="time_frame">
+        <item>上,午</item>
+        <item>下,午</item>
+        <item>晚,上</item>
+    </string-array>
+</resources>
