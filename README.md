@@ -5,6 +5,16 @@
 
 * 基于recyclerView  日历 制作的 星期 预约控件
 
+### 添加 Gradle 依赖
+
+* 把 `maven { url 'https://jitpack.io' }` 加入到 repositories 中
+* 添加如下依赖，末尾的「latestVersion」 [![Download](https://jitpack.io/v/AGouLiu/AppointmentTime.svg)](https://jitpack.io/#AGouLiu/AppointmentTime)里的版本名称，请自行替换。
+```groovy
+dependencies {
+    implementation 'com.github.AGouLiu:AppointmentTime:latestVersion'
+}
+```
+
 ### 效果gif
 
 ![AppointmentTime](https://github.com/AGouLiu/AppointmentTime/blob/master/res/xiaoguo.gif)
