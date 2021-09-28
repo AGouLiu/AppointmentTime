@@ -30,14 +30,15 @@ class AppointmentTimeView @JvmOverloads constructor(
         initView()
     }
 
-    lateinit var onPageChanged2: (String, String) -> Unit
-    lateinit var onClickListener: (CalendarView, Cell) -> Unit
+    var onPageChanged2: ((String, String) -> Unit?)? =null
+    var onClickListener: ((CalendarView, Cell) -> Unit)? = null
     private fun initView() {
         LayoutInflater.from(context).inflate(R.layout.view_appointment_time, this)
         recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         customCalendarAdapter = ReservedCalendarAdapter()
         customCalendarAdapter!!.listener  = CalendarView.OnClickListener { calendarView, cell ->
-            onClickListener.invoke(calendarView,cell)
+
+            onClickListener?.invoke(calendarView,cell)
         }
         recyclerView?.adapter = customCalendarAdapter
         manager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -48,7 +49,8 @@ class AppointmentTimeView @JvmOverloads constructor(
                 if (newState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
                     val calendarView: CalendarView = recyclerView.getChildAt(0) as CalendarView
                     val showDate: CustomDate = calendarView.showDate
-                    onPageChanged2.invoke(DateUtil.getCustomDateString(showDate),DateUtil.addCustomDateDay(showDate,6))
+
+                    onPageChanged2?.invoke(DateUtil.getCustomDateString(showDate),DateUtil.addCustomDateDay(showDate,6))
                 }
                 super.onScrollStateChanged(recyclerView, newState)
             }
